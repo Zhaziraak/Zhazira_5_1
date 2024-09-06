@@ -6,7 +6,6 @@ class MainPresenter {
 
     val model = CounterModel()
     private var contract: CounterContract? = null
-    private var view: CounterContract? = null
 
     fun attachContract(contract: CounterContract){
         this.contract = contract
@@ -32,9 +31,9 @@ class MainPresenter {
 
     fun checkConditions(value: Int) {
         when (value) {
-            10 -> view?.showToast("Поздравляем!")
-            15 -> view?.changeTextColor(Color.GREEN)
-            else -> view?.changeTextColor(Color.BLACK)
+            10 -> contract?.showToast("Поздравляем!")
+            15 -> contract?.changeTextColor(Color.GREEN)
+            else -> contract?.changeTextColor(Color.BLACK)
         }
 
     }
